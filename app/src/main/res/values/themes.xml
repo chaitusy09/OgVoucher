@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme. -->
+<style name="Base.Theme.Voucher" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Customize your light theme here. -->
+    <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <item name="colorPrimary">@color/color2green</item>
+    <item name="colorPrimaryVariant">@color/colorDarker</item>
+    <item name="colorOnPrimary">@color/white</item>
+    <!-- Secondary brand color. -->
+    <!-- <item name="colorSecondary">@color/teal_200</item>
+     <item name="colorSecondaryVariant">@color/teal_700</item>-->
+    <item name="colorOnSecondary">@color/black</item>
+</style>
+
+<style name="Theme.Voucher" parent="Base.Theme.Voucher" />
+<style name="Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">@color/color2green</item>
+    <item name="colorPrimaryVariant">@color/colorDarker</item>
+    <item name="colorOnPrimary">@color/white</item>
+
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    <!-- Customize your theme here. -->
+</style>
+
+<style name="Theme.MyApplication.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+</style>
+
+
+<style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+<style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+<style name="MyFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    // Set the `android:windowFullscreen` attribute to `true`.
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowLightStatusBar">true</item>
+    // Set the `android:statusBarColor` attribute to `@android:color/transparent`.
+    //<item name="android:statusBarColor">@color/colorDarker</item>
+
+</style>
+
+<style name="blackDialog" parent="android:style/Theme.Dialog">
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+</style>
+<style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+    <item name="cornerSizeBottomLeft">30dp</item> <!-- Adjust the radius as needed -->
+    <item name="cornerSizeBottomRight">30dp</item>
+</style>
+
+    <style name="MyLightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="MyLightTheme">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/sheetbackground</item>
+    </style>
+
+
+
+</resources>
