@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">VouchersSAS</string>
+
+
+    <string name="main_tittle">Platform Voucher</string>
+    <string name="main_recently_Redemption">Recently Redemption</string>
+    <string name="main_viewAll">View all</string>
+
+
+    <!--bottonsheet dialogue QR-->
+    <string name="amount">Amount</string>
+    <string name="voucherredemption"></string>
+    <string name="enternameofreader">Enter Name of Reader</string>
+    <string name="voucherRedemtion">Voucher Reedemption</string>
+    <string name="reedem">Redeem</string>
+    <string name="cancel">Cancel</string>
+    <string name="ttlaamountreedemed">Total amount Redeemed</string>
+    <string name="next">Next</string>
+
+    <!--Redem success code-->
+    <string name="successreedem">Successfully Reedemed</string>
+    <string name="name">Name</string>
+    <string name="vouchercode">Voucher Code</string>
+    <string name="dateandtime">Date &amp; Time</string>
+    <string name="reedemption">Redeption</string>
+
+    <!--bottonsheet dialogue addCode-->
+    <string name="vouchercodeedt">Voucher Code*</string>
+    <string name="serialnumber">Serial Number</string>
+    <string name="redemVoucher">Redeem Voucher</string>
+    <string name="validate">Validate</string>
+    <string name="edtRedem">Enter Name Of Redeem..</string>
+
+    <!--bottonsheet dialogue addCode-->
+    <string name="redemptionhistory">Redemption History</string>
+</resources>

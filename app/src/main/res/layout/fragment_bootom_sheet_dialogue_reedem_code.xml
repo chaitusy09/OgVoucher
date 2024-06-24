@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/voucherRedemtion"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="1.0" />
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@mipmap/close"
+            android:contentDescription="@string/cancel"
+            android:padding="500dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/voucher_code_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/borderblack"
+            android:hint="@string/vouchercodeedt"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialog_title" />
+
+        <EditText
+            android:id="@+id/edtSerialNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/borderblack"
+            android:hint="@string/serialnumber"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/voucher_code_input" />
+
+        <LinearLayout
+            android:id="@+id/redemVoucher"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtSerialNumber">
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_view"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:textOff=""
+                android:textOn=""
+                android:textSize="20sp"
+                android:thumb="@drawable/switchback"
+                app:showText="true"
+                app:track="@drawable/custom_track" />
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:text="@string/redemVoucher"
+                android:textColor="#030031" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearRedem"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/redemVoucher">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtNameofreedem"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/borderblack"
+                android:hint="@string/edtRedem"
+                android:paddingStart="20dp"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtAmount"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/borderblack"
+                android:hint="@string/amount"
+                android:paddingStart="20dp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearRedem">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_button"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/borderblack"
+                android:text="@string/validate"
+                android:textAllCaps="false"
+                android:textColor="@color/btnBlue"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/redeem_button"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_bg"
+                android:text="@string/redemVoucher"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
