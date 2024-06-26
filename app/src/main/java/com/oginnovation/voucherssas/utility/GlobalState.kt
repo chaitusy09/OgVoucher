@@ -1,4 +1,4 @@
-package com.kuwait.pravastelugu.utility
+package com.oginnovation.voucherssas.utility
 
 import android.app.Dialog
 import android.content.Context
@@ -9,7 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.org.evcharge.R
+import com.oginnovation.voucherssas.R
+
 
 
 class GlobalState {
@@ -18,10 +19,16 @@ class GlobalState {
     var userName: String = "userName"
     var password: String = "password"
 
-     var LOGINRESPONSE: String = "LOGINRESPONSE"
+     var TOKENRESPONSE: String = "TOKENRESPONSE"
      var ADDFAMILYMEMBER: String = "ADDFAMILYMEMBER"
      var showAdd: String = "SHOWADD"
     var TOKEN: String = "token"
+
+    //to send code value after login
+    var code: String = "code"
+    var state: String = "state"
+    var redirectURLMatch:String="http://localhost:4200/?code="
+    var redirectURL:String="http://localhost:4200"
 
     fun GetGlobalState(): GlobalState? {
        if (gs == null) {

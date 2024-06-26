@@ -13,7 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import android.provider.Settings;
-import com.kuwait.pravastelugu.utility.GlobalState
+import com.oginnovation.voucherssas.utility.GlobalState
 
 
 class ApiConfig constructor(mContext: Context) {
@@ -22,7 +22,9 @@ class ApiConfig constructor(mContext: Context) {
     companion object {
        // val url="http://185.103.120.94:9090/LadzAPI/api/v1/"
 
-        val url="https://ladz.mudem.dk/api/v1/"
+        val url="https://demovoucherapi.ogstack.com/api/v1/"
+
+
         var gs : GlobalState = GlobalState().GetGlobalState()!!
 
       /* private val loggingInterceptor = if (BuildConfig.DEBUG) {
@@ -33,9 +35,9 @@ class ApiConfig constructor(mContext: Context) {
         //}
 
         fun getSomething(context: Context): Retrofit {
-             val interceHeader =ContentTypeInterceptor(context)
+            // val interceHeader =ContentTypeInterceptor(context)
              val client = OkHttpClient.Builder()
-                .addInterceptor(interceHeader)
+                //.addInterceptor(interceHeader)
                  .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .build()
             val gson = GsonBuilder()

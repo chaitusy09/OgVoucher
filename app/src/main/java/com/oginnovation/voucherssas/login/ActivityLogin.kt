@@ -1,5 +1,6 @@
 package com.oginnovation.voucherssas.login
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -11,9 +12,12 @@ import android.webkit.WebViewClient
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import com.oginnovation.voucherssas.MainActivity
 import com.oginnovation.voucherssas.R
+import com.oginnovation.voucherssas.redemtionhistory.RedemtionHistoryActivity
+import com.oginnovation.voucherssas.spalsh.FullScreenActivity
 
-class ActivityLogin : AppCompatActivity() {
+class ActivityLogin : FullScreenActivity() {
     private lateinit var webView: WebView
     private lateinit var progressBar: ProgressBar
     private lateinit var viewModel: LoginViewModel
@@ -21,6 +25,8 @@ class ActivityLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
 
         progressBar = findViewById(R.id.progress_home)
         webView = findViewById(R.id.webview_home)
@@ -31,8 +37,11 @@ class ActivityLogin : AppCompatActivity() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 // Track URL here (e.g., with Google Analytics)
                 trackUrl(url)
-                //view?.loadUrl("")
-                return false // Handle all links within the WebView
+                if (view != null && url != null) {
+
+                    view.loadUrl(url)
+                }
+                return false
             }
 
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
@@ -59,10 +68,19 @@ class ActivityLogin : AppCompatActivity() {
         // You can use libraries like Google Analytics or Firebase Analytics
         // This example is just a placeholder
         if (url != null) {
-            if(url.contains("client_id")){
+            if(url.startsWith(gs.redirectURLMatch)){
                 val queryParams = getQueryParamsFromUrl(url)
-                println("response_type: ${queryParams["response_type"]}")
-                println("client_id: ${queryParams["client_id"]}")
+                val  code:String?=queryParams["code"]
+                 val state:String?=queryParams["state"]
+               // println("response_type: ${queryParams["code"]}")
+               // println("client_id: ${queryParams["state"]}")
+
+                //gs.storeSharedPreferences(this, gs.TOKEN, loginResponse.Token)
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(gs.code,code)
+                intent.putExtra(gs.state,state)
+                startActivity(intent)
+                finish()
             }
                 Log.d("WebViewActivity", "URL: $url")
         }
